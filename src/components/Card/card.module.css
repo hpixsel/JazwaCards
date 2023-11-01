@@ -1,0 +1,15 @@
+.card {
+  position: relative;
+  pointer-events: none;
+}
+
+.card__text {
+  position: absolute;
+  inset: 2.5rem 2rem 3rem;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  color: var(--clr-secondary);
+  font-weight: bold;
+  transform: rotate(-9.65deg);
+}

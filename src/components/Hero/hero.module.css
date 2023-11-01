@@ -1,0 +1,55 @@
+.hero {
+  height: calc(100dvh - 4rem);
+  display: grid;
+  place-content: center;
+  gap: 10rem;
+  padding-top: 6rem;
+}
+
+.hero h1 {
+  max-width: 12ch;
+  text-align: center;
+  margin-inline: auto;
+  font-size: var(--fs-700);
+}
+
+.hero span {
+  background: linear-gradient(100deg, #d6c395 3.91%, #a98c42 84.4%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero__svg_mobile {
+  width: 2rem;
+  margin-inline: auto;
+}
+
+.hero__svg {
+  display: none;
+}
+
+@media (min-width: 60rem) {
+  .hero {
+    height: auto;
+    padding-block: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    justify-content: space-between;
+  }
+
+  .hero h1 {
+    font-size: var(--fs-900);
+    text-align: left;
+    margin-inline: unset;
+  }
+
+  .hero__svg_mobile {
+    display: none;
+  }
+
+  .hero__svg {
+    display: block;
+    width: 25rem;
+  }
+}

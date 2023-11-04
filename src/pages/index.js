@@ -1,11 +1,14 @@
-import Layout from '@/components/Layout'
-import React from 'react'
+import Hero from "@/components/Hero"
+import Layout from "@/components/Layout"
+import Tutorial from "@/components/Tutorial"
+import React from "react"
 
 export default function index() {
   return (
-    <Layout>
+    <Layout title="JaźwaCards">
       <div className="container">
-        <section className='wrapper'><h1>Page Child</h1></section>
+        <Hero />
+        <Tutorial />
       </div>
     </Layout>
   )

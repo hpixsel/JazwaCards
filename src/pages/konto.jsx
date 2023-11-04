@@ -3,8 +3,12 @@ import Layout from "@/components/Layout"
 import React, { useState } from "react"
 import styles from "/src/styles/konto.module.css"
 import Card from "@/components/Card"
+import Link from "next/link"
+import { withIronSessionSsr } from "iron-session/next"
+import { ironOptions } from "@/lib/config"
 
-export default function konto() {
+export default function konto({ user }) {
+  console.log(user)
   const [wrap, setWrap] = useState(false)
 
   const wrapHandle = () => {
@@ -16,7 +20,7 @@ export default function konto() {
       <div className={`container wrapper ${styles.account}`}>
         <div className={`${styles.user} ${wrap ? "" : styles.user_wrap}`}>
           <div className={styles.user__name} onClick={() => wrapHandle()}>
-            <h4>Username</h4>
+            <h4>{user.username}</h4>
             <div className={styles.user__name_svg}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -46,7 +50,7 @@ export default function konto() {
           </div>
           <div className={styles.user__data}>
             <p>
-              <b>Email:</b> username@gmail.com
+              <b>Email:</b> {user.email}
             </p>
             <p>
               <b>Liczba zestawów:</b> 4
@@ -54,9 +58,9 @@ export default function konto() {
             <p>
               <b>Liczba słówek:</b> 726
             </p>
-            <a href="/logout" className={styles.user__btn}>
+            <Link href="/logout" className={styles.user__btn}>
               <div className="btn_cta">Wyloguj</div>
-            </a>
+            </Link>
           </div>
         </div>
         <div className={styles.cards}>
@@ -70,3 +74,20 @@ export default function konto() {
     </Layout>
   )
 }
+
+export const getServerSideProps = withIronSessionSsr(async ({ req, res }) => {
+  const user = req.session.user
+  if (!user) {
+    return {
+      redirect: {
+        permanent: false,
+        destination: "/login",
+      },
+      props: {},
+    }
+  } else {
+    return {
+      props: { user },
+    }
+  }
+}, ironOptions)

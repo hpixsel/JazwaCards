@@ -36,6 +36,11 @@
   margin-top: 2rem;
 }
 
+.user__data > p {
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
 .user__data > *:is(p + p) {
   margin-top: 1rem;
 }
@@ -61,6 +66,8 @@
 
   .user {
     max-height: 20rem;
+    min-width: 220px;
+    max-width: 280px;
   }
 
   .user__name {

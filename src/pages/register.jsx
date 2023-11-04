@@ -14,7 +14,7 @@ export default function register() {
   }, [username, email, password, confirmPassword])
 
   return (
-    <Layout>
+    <Layout title="Rejestracja">
       <div className={`wrapper container ${styles.form_container}`}>
         <form className={styles.form} onSubmit={e => e.preventDefault()}>
           <h2>Rejestracja</h2>
@@ -24,6 +24,7 @@ export default function register() {
             id="username"
             type="text"
             onChange={e => setUsername(e.target.value)}
+            required
           />
 
           <label htmlFor="email">Email</label>
@@ -31,6 +32,7 @@ export default function register() {
             id="email"
             type="email"
             onChange={e => setEmail(e.target.value)}
+            required
           />
 
           <label htmlFor="password">Hasło</label>
@@ -38,6 +40,7 @@ export default function register() {
             id="password"
             type="password"
             onChange={e => setPassword(e.target.value)}
+            required
           />
 
           <label htmlFor="confirmpassword">Potwierdź Hasło</label>
@@ -45,6 +48,7 @@ export default function register() {
             id="confirmpassword"
             type="password"
             onChange={e => setConfirmPassword(e.target.value)}
+            required
           />
 
           <p>

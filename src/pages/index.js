@@ -5,7 +5,7 @@ import React from "react"
 
 export default function index() {
   return (
-    <Layout>
+    <Layout title="JaźwaCards">
       <div className="container">
         <Hero />
         <Tutorial />

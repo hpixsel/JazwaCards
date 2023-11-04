@@ -46,7 +46,7 @@
   margin-top: 1.5rem;
 }
 
-.form a {
+.form label > a {
   color: var(--link);
 }
 
@@ -55,6 +55,24 @@
   border: 0;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.form__btn:active,
+.form__btn:focus {
+  background-color: #a98c42 !important;
+  opacity: 0.75;
+}
+
+.generating {
+  position: absolute;
+  inset: 0;
+  background: #0d1321da;
+  display: grid;
+  place-content: center;
+}
+
+.generating__svg {
+  width: 10rem;
 }
 
 @media (min-width: 60rem) {

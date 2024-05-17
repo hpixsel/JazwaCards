@@ -1,4 +1,4 @@
-# JaźwaStore Source Code
+# JaźwaCards Source Code
 
 ![Page Screenshot](./readme.png)
 Automatyzacja uczenia języków z pomocą AI
